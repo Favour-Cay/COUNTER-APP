@@ -12,7 +12,6 @@
 // }
 // totalLapTime()
 
-
 // let lapsCompleted = 0
 
 // Create a function that increments the lapsCompleted variable with one
@@ -42,39 +41,44 @@
 //     console.log(count)
 // }
 
-let countEl = document.getElementById("count-el")
-let saveEl = document.getElementById("save-el")
+let countEl = document.getElementById('count-el');
+let saveEl = document.getElementById('save-el');
 
 // console.log(countEl)
 
-let count = 0
-//let secondCount = count--
+let count = 0;
+let secondCount;
 
 function increment() {
-    count = count + 1
-    countEl.textContent = count
+  count = count + 1;
+  countEl.textContent = count;
 }
 
-function decrement(){
-    secondCount = count - 1
-    countEl.textContent = secondCount
-    
+function decrement() {
+  if (count <= 0) {
+    alert('This is the limit');
+    return;
+  } else {
+    count = count - 1;
+    secondCount = count;
+    countEl.textContent = secondCount;
+    // console.log(count);
+  }
 }
-
 
 //1. Create a function, save(), which logs out the count when it's called
-function save(){
-    console.log(count)
+function save() {
+  console.log(count);
 }
 
 function save() {
-    // 2. Create a variable that contains both the count and the dash separator, i.e. "12 -"
-   let countDash = count + " - "
-    // 3. Render the variable in the saveEl using innerText
-    saveEl.textContent += countDash
-    // NB: Make sure to not delete the existing content of the paragraph
-    countEl.textContent = 0
-    count = 0
+  // 2. Create a variable that contains both the count and the dash separator, i.e. "12 -"
+  let countDash = count + ' - ';
+  // 3. Render the variable in the saveEl using innerText
+  saveEl.textContent += countDash;
+  // NB: Make sure to not delete the existing content of the paragraph
+  countEl.textContent = 0;
+  count = 0;
 }
 // innerText alternative mdn
 // textcontent
